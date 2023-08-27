@@ -131,7 +131,7 @@ class Regex(Continuation):
         masks = []
         for pstate in self.pstates:
             mask = torch.full(
-                (len(self.model.tokenizer.vocabulary),), -math.inf, device=self.device
+                (len(logits[0]),), -math.inf, device=self.device
             )
 
             if pstate[1] > -1:
